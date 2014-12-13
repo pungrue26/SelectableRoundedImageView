@@ -1,0 +1,81 @@
+SelectableRoundedImageView
+==========================
+Android <code>ImageView</code> that supports different radiuses on each corner. It also 
+supports oval(and circle) shape and border. This would be especially useful for 
+using inside <code>CardView</code> which should be rounded <b><i>only</i></b> top left and 
+top right corners(Don't forget to call <code>setPreventCornerOverlap(false)</code> on your cardview).
+
+
+Try out the sample application [on the Play Store][2].
+
+![SelectableRoundedImageView Sample Screenshots][1]
+
+Usage
+----
+Define in xml:
+
+```xml
+<com.joooonho.SelectableRoundedImageView
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/image"
+        android:src="@drawable/photo1"
+        android:scaleType="centerCrop"
+        app:sriv_left_top_corner_radius="16dip"
+        app:sriv_right_top_corner_radius="0dip"
+        app:sriv_left_bottom_corner_radius="48dip"
+        app:sriv_right_bottom_corner_radius="16dip"
+        app:sriv_border_width="2dip"
+        app:sriv_border_color="#008fea"
+        app:sriv_oval="true" />
+```
+
+Or in code:
+
+```java
+SelectableRoundedImageView sriv = new SelectableRoundedImageView(context);
+sriv.setScaleType(ScaleType.CENTER_CROP);
+sriv.setCornerRadiusesDP(4, 4, 0, 0);
+sriv.setBorderWidthDP(4);
+sriv.setBorderColor(Color.BLUE);
+sriv.setImageDrawable(drawable);
+sriv.setOval(true);
+```
+
+Including In Your Project
+-------------------------
+
+SelectableRoundedImageView is presented as a [library project][3]. A standalone JAR 
+is not possible due to the custom attributes.
+
+You can include this project by [referencing it as a library project][4] in
+Eclipse or ant.
+
+Maven and Gradle is not supported yet. I promise I'll update it ASAP!
+
+
+Developed By
+==========================
+
+ * Joonho Kim - <pungrue26@gmail.com>
+ 
+License
+-------------------------
+
+    Copyright 2014 Joonho Kim
+
+    Licensed under the Apache License, Version 2.0 (the "License");
+    you may not use this file except in compliance with the License.
+    You may obtain a copy of the License at
+
+       http://www.apache.org/licenses/LICENSE-2.0
+
+    Unless required by applicable law or agreed to in writing, software
+    distributed under the License is distributed on an "AS IS" BASIS,
+    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+    See the License for the specific language governing permissions and
+    limitations under the License.
+
+[1]: http://i.imgur.com/U5VS7m2.png?1
+[2]: https://play.google.com/store/apps/details?id=com.joooonho
+[3]: http://developer.android.com/guide/developing/projects/projects-eclipse.html
+[4]: http://developer.android.com/guide/developing/projects/projects-eclipse.html#ReferencingLibraryProject
