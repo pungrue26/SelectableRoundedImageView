@@ -1,5 +1,7 @@
 SelectableRoundedImageView
 ==========================
+[![Android Arsenal](https://img.shields.io/badge/Android%20Arsenal-SelectableRoundedImageView-brightgreen.svg?style=flat)](https://android-arsenal.com/details/1/1234)
+
 Android <code>ImageView</code> that supports different radiuses on each corner. It also 
 supports oval(and circle) shape and border. This would be especially useful for 
 using inside <code>CardView</code> which should be rounded <b><i>only</i></b> top left and 
@@ -74,6 +76,7 @@ License
     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
     See the License for the specific language governing permissions and
     limitations under the License.
+    
 
 [1]: http://i.imgur.com/U5VS7m2.png?1
 [2]: https://play.google.com/store/apps/details?id=com.joooonho
