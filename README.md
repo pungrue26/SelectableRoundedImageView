@@ -46,13 +46,16 @@ sriv.setOval(true);
 Including In Your Project
 -------------------------
 
-SelectableRoundedImageView is presented as a [library project][3]. A standalone JAR 
-is not possible due to the custom attributes.
+If you are using Android Studio, SelectableRoundedImageView is available through Gradle.
+```
+dependencies {
+    compile 'com.joooonho:selectableroundedimageview:1.0.0'
+}
+```
 
-You can include this project by [referencing it as a library project][4] in
-Eclipse or ant.
-
-Maven and Gradle is not supported yet. I promise I'll update it ASAP!
+Also SelectableRoundedImageView is presented as a [library project][3]. You can include 
+this project by [referencing it as a library project][4] in Eclipse or ant(A standalone JAR 
+is not possible due to the custom attributes). 
 
 
 Developed By
