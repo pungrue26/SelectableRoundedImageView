@@ -7,8 +7,9 @@ supports oval(and circle) shape and border. This would be especially useful for
 being used inside <code>CardView</code> which should be rounded <b><i>only</i></b> top left and 
 top right corners(Don't forget to call <code>setPreventCornerOverlap(false)</code> on your cardview).
 
+If you are interested in how I made this library and my thoughts on CardView, check [my blog post][5].
 
-Try out the sample application [on the Play Store][2].
+Sample application is ready [on the Play Store][2].
 
 ![SelectableRoundedImageView Sample Screenshots][1]
 
@@ -85,3 +86,4 @@ License
 [2]: https://play.google.com/store/apps/details?id=com.joooonho
 [3]: http://developer.android.com/guide/developing/projects/projects-eclipse.html
 [4]: http://developer.android.com/guide/developing/projects/projects-eclipse.html#ReferencingLibraryProject
+[5]: http://www.joooooooooonhokim.com/?p=289
