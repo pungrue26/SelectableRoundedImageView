@@ -15,6 +15,8 @@ Sample application is ready [on the Play Store][2].
 
 Usage
 ----
+Note: I found that it doesn't properly load images when being used with [Android-Universal-Image-Loader][7]. I am working on this, I'll fix it ASAP. This library nicely works with Android framework's ImageView.setImageDrawable(), and Square's Picasso library.
+
 Define in xml:
 
 ```xml
@@ -88,3 +90,4 @@ License
 [4]: http://developer.android.com/guide/developing/projects/projects-eclipse.html#ReferencingLibraryProject
 [5]: http://www.joooooooooonhokim.com/?p=289
 [6]: http://github.com/vinc3m1/RoundedImageView
+[7]: https://github.com/nostra13/Android-Universal-Image-Loader
