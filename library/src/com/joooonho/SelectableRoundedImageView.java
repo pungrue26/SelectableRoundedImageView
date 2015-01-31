@@ -508,6 +508,7 @@ public class SelectableRoundedImageView extends ImageView {
                 configureBounds(canvas);
                 if (mBorderWidth > 0) {
                     adjustBorderWidthAndBorderBounds(canvas);
+                    adjustCanvasForBorder(canvas);
                     setBorderRadii();
                 }
                 mBoundsConfigured = true;
@@ -515,7 +516,6 @@ public class SelectableRoundedImageView extends ImageView {
 
             if (mOval) {
                 if (mBorderWidth > 0) {
-                    adjustCanvasForBorder(canvas);
                     mPath.addOval(mBounds, Path.Direction.CW);
                     canvas.drawPath(mPath, mBitmapPaint);
                     mPath.reset();
@@ -527,7 +527,6 @@ public class SelectableRoundedImageView extends ImageView {
                 }
             } else {
                 if (mBorderWidth > 0) {
-                    adjustCanvasForBorder(canvas);
                     mPath.addRoundRect(mBounds, mRadii, Path.Direction.CW);
                     canvas.drawPath(mPath, mBitmapPaint);
                     mPath.reset();
