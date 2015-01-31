@@ -207,7 +207,7 @@ public class SelectableRoundedImageView extends ImageView {
         return mLeftTopCornerRadius;
     }
 
-    public void setCornerRadiusesDP(float leftTop, float rightTop, float leftBottom, float rightBottom) {
+    public void setCornerRadiiDP(float leftTop, float rightTop, float leftBottom, float rightBottom) {
         final float density = getResources().getDisplayMetrics().density;
         
         final float lt = leftTop * density;
@@ -483,7 +483,7 @@ public class SelectableRoundedImageView extends ImageView {
             mBorderBounds.inset(- mBorderWidth / 2, - mBorderWidth / 2);
         }
 
-        private void setBorderRadiuses() {
+        private void setBorderRadii() {
             for (int i = 0; i < mRadii.length; i++) {
                 if (mRadii[i] > 0) {
                     mBorderRadii[i] = mRadii[i];
@@ -499,7 +499,7 @@ public class SelectableRoundedImageView extends ImageView {
                 configureBounds(canvas);
                 if (mBorderWidth > 0) {
                     adjustBorderWidthAndBorderBounds(canvas);
-                    setBorderRadiuses();
+                    setBorderRadii();
                 }
                 mBoundsConfigured = true;
             }
