@@ -207,6 +207,15 @@ public class SelectableRoundedImageView extends ImageView {
         return mLeftTopCornerRadius;
     }
 
+    /**
+     * Set radii for each corner.
+     * 
+     * @param leftTop The desired radius for left-top corner in dip.
+     * @param rightTop The desired desired radius for right-top corner in dip.
+     * @param leftBottom The desired radius for left-bottom corner in dip.
+     * @param rightBottom The desired radius for right-bottom corner in dip.
+     * 
+     */
     public void setCornerRadiiDP(float leftTop, float rightTop, float leftBottom, float rightBottom) {
         final float density = getResources().getDisplayMetrics().density;
         
