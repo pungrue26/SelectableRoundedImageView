@@ -413,7 +413,7 @@ public class SelectableRoundedImageView extends ImageView {
             if (ScaleType.CENTER == mScaleType) {
                 mBounds.set(clipBounds);
             } else if (ScaleType.CENTER_CROP == mScaleType) {
-                applyScaleToRadiuses(canvasMatrix);
+                applyScaleToRadii(canvasMatrix);
                 mBounds.set(clipBounds);
             } else if (ScaleType.FIT_XY == mScaleType) {
                 Matrix m = new Matrix();
@@ -422,15 +422,15 @@ public class SelectableRoundedImageView extends ImageView {
                 mBounds.set(clipBounds);
             } else if (ScaleType.FIT_START == mScaleType || ScaleType.FIT_END == mScaleType
                     || ScaleType.FIT_CENTER == mScaleType || ScaleType.CENTER_INSIDE == mScaleType) {
-                applyScaleToRadiuses(canvasMatrix);
+                applyScaleToRadii(canvasMatrix);
                 mBounds.set(mBitmapRect);
             } else if (ScaleType.MATRIX == mScaleType) {
-                applyScaleToRadiuses(canvasMatrix);
+                applyScaleToRadii(canvasMatrix);
                 mBounds.set(mBitmapRect);
             }
         }
 
-        private void applyScaleToRadiuses(Matrix m) {
+        private void applyScaleToRadii(Matrix m) {
             float[] values = new float[9];
             m.getValues(values);
             for (int i = 0; i < mRadii.length; i++) {
