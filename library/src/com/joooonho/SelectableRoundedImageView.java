@@ -544,11 +544,13 @@ public class SelectableRoundedImageView extends ImageView {
             if (radii == null)
                 return;
 
-            if (radii.length < 8) {
+            if (radii.length != 8) {
                 throw new ArrayIndexOutOfBoundsException("radii[] needs 8 values");
             }
 
-            mRadii = radii;
+            for (int i = 0; i < radii.length; i++) {
+                mRadii[i] = radii[i];
+            }
         }
 
         @Override
