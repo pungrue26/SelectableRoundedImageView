@@ -9,36 +9,25 @@ top right corners(Don't forget to call <code>setPreventCornerOverlap(false)</cod
 
 I referred to the [RoundedImageView][6], developed by Vince, in developing this new one, and I really appreciate him. Also, I wrote a short article about how I made this library and my thoughts on CardView, check [my blog post][5].
 
-Sample application is ready [on the Play Store][2].
+Get the sample app on Play Store.<br> [![Play Store Image](https://camo.githubusercontent.com/dc1ffe0e4d25c2c28a69423c3c78000ef7ee96bf/68747470733a2f2f646576656c6f7065722e616e64726f69642e636f6d2f696d616765732f6272616e642f656e5f6170705f7267625f776f5f34352e706e67)](https://play.google.com/store/apps/details?id=com.joooonho)
 
 ![SelectableRoundedImageView Sample Screenshots][1]
 
-<b>Note</b>: I found that it doesn't properly load images when being used with [Android-Universal-Image-Loader][7]. I am working on this, I'll fix it ASAP. This library nicely works with Android framework ImageView's instance methods(setImageDrawable(), setImageBitmap(), etc.) and [Square's Picasso][8] library.
-
-<b>Note</b>: This library currently has a nasty bug when being used with Adapter. This library doesn't work when convert view is saved and retrieved with setTag(), getTag(). So this library <b>DOES</b> work when :
+<b>Note</b>: When using with [Android-Universal-Image-Loader][7], be sure to use <code>SimpleBitmapDisplayer</code> or <code>FadeInBitmapDisplayer</code> rather than <code>RoundedBitmapDisplayer</code>(or <code>RoundedVignetteBitmapDisplayer</code>) when building <code>DisplayImageOptions</code>. See below code.
 
 ```java
-if (convertView == null) {
-    view = mInflater.inflate(R.layout.list_item_icon_text, parent, false);
-} else {
-    view = convertView;
-}
+options = new DisplayImageOptions.Builder()
+                .showImageOnLoading(R.drawable.ic_stub)
+                .showImageForEmptyUri(R.drawable.ic_empty)
+                .showImageOnFail(R.drawable.ic_error)
+                .cacheInMemory(true)
+                .cacheOnDisk(true)
+                .considerExifParams(true)
+//              .displayer(new RoundedBitmapDisplayer(20))
+//              DO NOT USE RoundedBitmapDisplayer. Use SimpleBitmapDisplayer!
+                .displayer(new SimpleBitmapDisplayer())
+                .build();
 ```
-
-But this library does <b>NOT</b> work(corners get rounded twice) when :
-
-```java
-if (convertView == null) {
-    view = inflater.inflate(R.layout.item_list_image, parent, false);
-    holder = new ViewHolder();
-    holder.text = (TextView) view.findViewById(R.id.text);
-    holder.image = (ImageView) view.findViewById(R.id.image);
-    view.setTag(holder);
-} else {
-    holder = (ViewHolder) view.getTag();
-}
-```
-My bad. I will fix it as soon as possible. 
 
 Usage
 ----
@@ -64,7 +53,7 @@ Or in code:
 ```java
 SelectableRoundedImageView sriv = new SelectableRoundedImageView(context);
 sriv.setScaleType(ScaleType.CENTER_CROP);
-sriv.setCornerRadiusesDP(4, 4, 0, 0);
+sriv.setCornerRadiiDP(4, 4, 0, 0);
 sriv.setBorderWidthDP(4);
 sriv.setBorderColor(Color.BLUE);
 sriv.setImageDrawable(drawable);
@@ -77,7 +66,7 @@ Including In Your Project
 If you are using Android Studio, SelectableRoundedImageView is available through Gradle.
 ```
 dependencies {
-    compile 'com.joooonho:selectableroundedimageview:1.0.0'
+    compile 'com.joooonho:selectableroundedimageview:1.0.1'
 }
 ```
 
