@@ -98,7 +98,7 @@ License
     limitations under the License.
     
 
-[1]: http://i.imgur.com/U5VS7m2.png?1
+[1]: http://i.imgur.com/iSizH82.png
 [2]: https://play.google.com/store/apps/details?id=com.joooonho
 [3]: http://developer.android.com/guide/developing/projects/projects-eclipse.html
 [4]: http://developer.android.com/guide/developing/projects/projects-eclipse.html#ReferencingLibraryProject
