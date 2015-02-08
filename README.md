@@ -13,9 +13,21 @@ Get the sample app on Play Store.<br> [![Play Store Image](https://camo.githubus
 
 ![SelectableRoundedImageView Sample Screenshots][1]
 
-<b>Note</b>: I found that it doesn't properly load images when being used with [Android-Universal-Image-Loader][7]. I am working on this, I'll fix it ASAP. This library nicely works with Android framework ImageView's instance methods(setImageDrawable(), setImageBitmap(), etc.) and [Square's Picasso][8] library.
+<b>Note</b>: When using with [Android-Universal-Image-Loader][7], be sure to use <code>SimpleBitmapDisplayer</code> or <code>FadeInBitmapDisplayer</code> rather than <code>RoundedBitmapDisplayer</code>(or <code>RoundedVignetteBitmapDisplayer</code>) when building <code>DisplayImageOptions</code>. See below code.
 
-My bad. I will fix it as soon as possible. 
+```java
+options = new DisplayImageOptions.Builder()
+                .showImageOnLoading(R.drawable.ic_stub)
+                .showImageForEmptyUri(R.drawable.ic_empty)
+                .showImageOnFail(R.drawable.ic_error)
+                .cacheInMemory(true)
+                .cacheOnDisk(true)
+                .considerExifParams(true)
+//              .displayer(new RoundedBitmapDisplayer(20))
+//              DO NOT USE RoundedBitmapDisplayer. Use SimpleBitmapDisplayer!
+                .displayer(new SimpleBitmapDisplayer())
+                .build();
+```
 
 Usage
 ----
