@@ -31,7 +31,7 @@ public class MainActivity extends Activity {
         // Of course, you can set round radius in code.
         SelectableRoundedImageView iv3 = (SelectableRoundedImageView) findViewById(R.id.image3);
         iv3.setImageDrawable(getResources().getDrawable(R.drawable.photo3));
-        ((SelectableRoundedImageView)iv3).setCornerRadiusesDP(4, 4, 0, 0);
+        ((SelectableRoundedImageView)iv3).setCornerRadiiDP(4, 4, 0, 0);
         
     }
 }
