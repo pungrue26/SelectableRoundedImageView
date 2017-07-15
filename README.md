@@ -21,6 +21,7 @@ Get the sample app on Play Store.<br> [![Play Store Image](https://camo.githubus
 Glide.with(context)
     .load(src)
     .asBitmap()
+    .dontAnimate()
     .listener(l)
     .into(imageView) 
 ```
